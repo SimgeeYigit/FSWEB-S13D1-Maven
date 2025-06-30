@@ -5,10 +5,10 @@ public class Main {
         System.out.println("Hello world!");
     }
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        if (clock < 0 || clock > 23 || isBarking) {
+        if (clock < 0 || clock > 23) {
             return false;
         }
-        return clock >= 20 || clock < 8;
+        return isBarking && (clock < 8 || clock >= 20);
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
@@ -16,9 +16,8 @@ public class Main {
     }
 
     public static boolean isCatPlaying(boolean isSummer, int temp) {
-        int lowestTemp = 25;
         int highestTemp = isSummer ? 45 : 35;
-        return temp < highestTemp && temp > lowestTemp;
+        return temp >= 25 && temp <= highestTemp;
     }
 
     public static double area(double width, double height) {
